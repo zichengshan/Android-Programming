@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:hint="title" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:hint="description" />
+        <Spinner
+            android:id="@+id/itemStatus"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/number_list"
+            android:layout_gravity="right"
+            />
+        <Button
+            android:id="@+id/addItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:onClick="onAddClick"/>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/order_list"
+                android:layout_gravity="center"
+                android:background="#FAF9F9"
+                />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onSetOrder"
+                android:text="APPLY" />
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/search_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="   Item Title      "
+                android:layout_gravity="right"
+                />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:onClick="onSearchItem"
+                android:text="SEARCH" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <fragment
+        android:name="com.example.workout.WorkoutListFragment"
+        android:id="@+id/list_frag"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        />
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>
